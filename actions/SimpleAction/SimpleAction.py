@@ -16,13 +16,28 @@ from gi.repository import Gtk, Adw
 class SimpleAction(ActionBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.use_state_one: bool = True
         
     def on_ready(self) -> None:
-        icon_path = os.path.join(self.plugin_base.PATH, "assets", "info.png")
-        self.set_media(media_path=icon_path, size=0.75)
+        _, render = self.plugin_base.asset_manager.icons.get_asset_values("info")
+
+        if render:
+            self.set_media(render)
+
+        self.set_color()
         
     def on_key_down(self) -> None:
-        print("Key down")
+        self.set_color()
     
     def on_key_up(self) -> None:
-        print("Key up")
+        print("KEY UP")
+
+    def set_color(self):
+        if self.use_state_one:
+            color = self.plugin_base.asset_manager.colors.get_asset_values("state1")
+        else:
+            color = self.plugin_base.asset_manager.colors.get_asset_values("state2")
+        self.use_state_one = not self.use_state_one
+
+        if color:
+            self.set_background_color(color=list(color))

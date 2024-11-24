@@ -1,6 +1,28 @@
 {
-    "version": "",
+    "name": "Template",
+    "version": "1.0.0",
+    "minimum-app-version": "1.0.0",
+    "app-version": "1.0.0",
+    "id": "com.StreamController.Template",
+    "github": "test",
     "thumbnail": "",
-    "id": "",
-    "name": ""
+    "descriptions": {
+        "en_US": "Simple Plugin"
+    },
+    "short-descriptions": {
+        "en_US": "Simple Plugin"
+    },
+    "author": "StreamController",
+    "tags": [
+        "Demo"
+    ],
+    "about": {
+        "release-notes": {
+            "path": "",
+            "version": ""
+        },
+        "credits": {
+            "": []
+        }
+    }
 }
