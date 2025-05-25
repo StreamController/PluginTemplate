@@ -30,11 +30,5 @@ class PluginTemplate(PluginBase):
         # Adds the action to the plugin
         self.add_action_holder(self.simple_action_holder)
 
-        # Register plugin
-        self.register(
-            plugin_name="Template",  # Should be a unique name for your plugin
-            # The GitHub repository for your plugin
-            github_repo="https://github.com/StreamController/PluginTemplate",
-            plugin_version="1.0.0",  # The plugin version, will be used to check updates
-            app_version="1.1.1-alpha"  # The support application version
-        )
+        # Register plugin using details from manifest.json
+        self.register()
